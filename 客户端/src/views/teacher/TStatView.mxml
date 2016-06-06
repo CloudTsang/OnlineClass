@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009"
+		xmlns:s="library://ns.adobe.com/flex/spark"
+		xmlns:charts="mx.charts.*"
+		viewActivate="activateHandler(event)"
+		title="TStatView">
+	
+	<fx:Script>
+		<![CDATA[
+			import com.onlineclass.teacherside.chartrender.ChartCreator;
+			import com.onlineclass.teacherside.chartrender.StatRender;
+			import com.onlineclass.info.StudentInfo;
+			import com.onlineclass.teacherside.info.StatListInfo;
+			import mx.collections.ArrayCollection;
+			
+			public static var statResult:StatListInfo;  
+			public static var statName:String;
+			protected var _sArrc:ArrayCollection;
+			protected var _chart:ChartCreator;
+			protected var _nArrc:ArrayCollection;
+			
+			protected function activateHandler(e:Event):void{
+				if( data!=null  ){		
+						statResult = data as StatListInfo;
+				}
+				txtDes.text = statName+"统计数据"
+				_nArrc = new ArrayCollection();
+				_sArrc=new ArrayCollection();
+				_sArrc.source = statResult.scoreList;
+				listStat.dataProvider = _sArrc;
+				listStat.addEventListener(MouseEvent.CLICK , renewChart);
+
+				_chart = new ChartCreator(columnchart , _nArrc);
+			}
+			
+			protected function renewChart(e:MouseEvent):void{
+				_nArrc.source = statResult.chartList [ listStat.selectedIndex ]
+			}
+			
+			protected function btnBack_clickHandler(event:MouseEvent):void
+			{
+				navigator.popView();
+			}
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<s:titleContent>
+		<s:Label id="txtDes" color="#FFFFFF" fontSize="20" text="试卷名 - 统计数据"/>
+	</s:titleContent>
+	<s:actionContent>
+		<s:Button id="btnBack" label="返回" click="btnBack_clickHandler(event)" doubleClickEnabled="false"/>
+	</s:actionContent>
+	
+	<s:Label   x="130" y="10" text="平均分" id="labAvg"/>
+	<s:Label   x="230" y="10" text="方差" id="labVrc"/>
+	<s:Label   x="10" y="10" text="班级" id="labCla"/>
+	
+	<s:List id="listStat"   x="9" y="29" width="301" height="138" itemRenderer="com.onlineclass.teacherside.chartrender.StatRender" doubleClickEnabled="false"></s:List>
+	<charts:ColumnChart id="columnchart"  x="10" y="186" width="300" height="220" showDataTips="true" type="clustered"  columnWidthRatio="0.5"/>
+	<!--charts:Legend  x="225" y="274" dataProvider="{columnchart}"/-->
+	
+</s:View>

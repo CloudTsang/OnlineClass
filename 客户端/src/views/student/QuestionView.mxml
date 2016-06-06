@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009"
+		xmlns:s="library://ns.adobe.com/flex/spark"
+		xmlns:text="fl.text.*"
+		xmlns:ns1="*"
+		currentState="RQState" title="HQuestionView" 
+		viewActivate="activateHandler(event)"
+		viewDeactivate="viewDeactivateHandler(event)">
+	<s:states>
+		<s:State name="SState"/>
+		<s:State name="RQState"/>
+	</s:states>
+	<fx:Script>
+		<![CDATA[
+			import com.onlineclass.info.HQuestionListInfo;
+			import com.onlineclass.info.StudentInfo;
+			import com.onlineclass.net.ISender;
+			
+			import fl.text.TLFTextField;
+			
+			import spark.components.ActionBar;
+			import spark.events.ViewNavigatorEvent;
+			
+			protected var qUnit:ListUnitTemplate;
+			protected function activateHandler(e:Event):void {
+				trace("进入答卷视图");
+				qUnit = new HQuestionUnit(
+					data.question as HQuestionListInfo , 
+					listQNo , txtTime  ,txtQno, txtTestName, 
+					radiogroup1  , btnComp,btnGiveup  ,btnPrevQ , btnNextQ, 
+					StudentSide.con, data.student as StudentInfo 
+				);
+				
+				//题目文本框的位置设置
+				tlf = (qUnit as HQuestionUnit).questionText as TLFTextField;
+				tlf.x = listQNo.x+listQNo.width+10;
+				tlf.y = listQNo.y;
+				tlf.width=systemManager.screen.width - tlf.x-20;
+				tlf.height = listQNo.height;
+				visualE.addChild(tlf);
+				
+				StudentSide.con.addEventListener(Basic.COMMUNICATE_COMPLETE , CommuHandler);
+				StudentSide.alertWindow.btn.addEventListener(MouseEvent.CLICK , alertConfirm);
+			}
+			
+			private function alertConfirm(e:Event=null):void{
+				if(StudentSide.alertWindow.isOpen) StudentSide.alertWindow.close();
+				StudentSide.dispose();
+				navigator.popToFirstView();
+			}
+			
+			protected function CommuHandler(e:Event):void{
+				var type:int = DataProcessor.instance.dataType;
+				if(type == Basic.DATA_ERR){
+					txtTips.text=DataProcessor.instance.data as String;
+					return;
+				}
+				else if(type== Basic.DATA_GIVEUP){
+					if( (DataProcessor.instance.data as Boolean)==true ) backToClient();
+					else txtTips.text="请求中断考试失败";
+					return ;
+				}
+				if(tlf.parent == visualE)visualE.removeChild(tlf);
+				setCurrentState("SState");
+				txtScore.text=String( DataProcessor.instance.data );
+				btnComp.visible=false;
+				btnGiveup.label="返回";
+			}
+			protected  function backToClient(e:Event=null):void{
+				navigator.popView();
+			}
+			protected function viewDeactivateHandler(event:ViewNavigatorEvent=null):void
+			{
+				try{
+					StudentSide.con.removeEventListener(Basic.COMMUNICATE_COMPLETE , CommuHandler);
+				}catch(err:Error){
+				}			
+				trace("退出问卷视图");
+				StudentSide.alertWindow.btn.removeEventListener(MouseEvent.CLICK , alertConfirm);
+				qUnit=null;
+			}
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<s:RadioButtonGroup id="radiogroup1"/>
+		<text:TLFTextField id="tlf"/>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<s:actionContent>
+		<s:Button id="btnComp" x="10" y="10" width="60" height="29" label="提交"
+				  doubleClickEnabled="false"
+				  x.RQState="52" width.RQState="78"/>
+		<s:Button id="btnGiveup" x="78" y="10" height="29" label="放弃"
+				  doubleClickEnabled="false"
+				  x.RQState="93" width.RQState="55"/>
+	</s:actionContent>
+	<s:titleContent>
+		<s:Label id="txtTestName" includeIn="RQState" width="100" height="22" color="#FFFFFF"
+				 fontSize="20" textAlign="left"/>
+		<s:Label id="txtQno" includeIn="RQState" width="90" height="22" color="#FFFFFF" fontSize="20"/>
+	</s:titleContent>
+	
+	<s:List id="listQNo" includeIn="RQState" x="9" y="45" width="45" height="283" selectedIndex="0"></s:List>
+	
+	<s:RadioButton id="btnA" includeIn="RQState" x="68.25" y="353" label="A" groupName="radiogroup1"/>
+	<s:RadioButton id="btnB" includeIn="RQState" x="130.5" y="353" label="B" groupName="radiogroup1"/>
+	<s:RadioButton id="btnC" includeIn="RQState" x="192.2" y="353" label="C" groupName="radiogroup1"/>
+	<s:RadioButton id="btnD" includeIn="RQState" x="255.05" y="353" label="D" groupName="radiogroup1"/>
+	
+	<s:Button id="btnNextQ" includeIn="RQState" x="11" y="336" height="30" label="↓"/>
+	<s:Button id="btnPrevQ" includeIn="RQState" x="11" y="5" width="39" height="33" label="↑" />
+	
+	<s:Label includeIn="SState" x="100" y="94" fontSize="25" text="您的分数为："/>
+	<s:Label id="txtScore" includeIn="SState" x="171" y="213" fontSize="50" textAlign="center"
+			 verticalAlign="middle"/>
+	<s:Label includeIn="RQState" x="80" y="10" width="74" color="#000000" text="剩余(s)"/>
+	<s:Label id="txtTime" includeIn="RQState" x="157" y="9" width="76" height="22" color="#000000"
+			 fontSize="20" textAlign="center" verticalAlign="middle"/>
+	
+	<s:Label id="txtTips" includeIn="RQState" x="0" y="393" width="320" height="18" fontSize="16"
+			 text="请再限制时间内完成试题并提交" textAlign="center"/>	
+	
+	<s:SpriteVisualElement id="visualE" height="100%" width="100%" includeIn="RQState"/>
+</s:View>

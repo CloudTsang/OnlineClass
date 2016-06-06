@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" 
+		fontSize="12" title="网络课程APP"
+		viewActivate="activateHandler(event)"
+		>
+	<fx:Script>
+		<![CDATA[
+			import com.onlineclass.info.TestListInfo;
+			import com.onlineclass.net.ISender;
+			import com.onlineclass.teacherside.TestNClassListUnit;
+			import com.onlineclass.teacherside.chartrender.CustomItemRenderer;
+			import com.onlineclass.teacherside.chartrender.StatRender;
+			import com.onlineclass.teacherside.net.ITSender;
+			import com.onlineclass.teacherside.net.TeacherCon;
+			import com.onlineclass.teacherside.net.TeacherConHSVC;
+			
+			protected static var tUnit:TestNClassListUnit;
+			protected function activateHandler(e:Event):void{
+				if(TeacherSide.con == null){
+					destructionPolicy = "never";
+					CustomItemRenderer.setPos(0 , 100 , 250 ,400);
+					StatRender.setPos(10,130,230);
+					switch( data )
+					{
+						case "Socket":
+							TeacherSide.con = new TeacherCon();
+							break;
+						case "POST":
+							TeacherSide.con = new TeacherConHSVC(txtTips);
+							break;
+						case "GET":
+							TeacherSide.con = new TeacherConHSVC(txtTips , "GET");
+							break;
+					}
+				    TeacherSide.con.addEventListener( Basic.COMMUNICATE_COMPLETE,commuHandler);
+					TeacherSide.con.testListRequest();
+					txtTips.text = "正在从服务器下载试卷批改数据，请稍候...";
+				}
+			}
+			protected function commuHandler(e:Event):void{
+				var type:int = DataProcessor.instance.dataType;
+				var tmp:* = DataProcessor.instance.data;
+				switch(type){
+					case Basic.DATA_ERR:
+						txtTips.text = tmp as String;
+						break;
+					case Basic.DATA_TEACHER:
+						txtTips.text = "请选择要查看哪份试卷的分数。";		
+						tUnit = new TestNClassListUnit( listTest , listClasss , tmp as Array , txtTips , TeacherSide.con as ITSender , btnStat ,btnConf);
+						tUnit.addEventListener("goStat" , goStatView);
+						tUnit.addEventListener("goScore",goScoreView);
+						break;
+					case Basic.DATA_TCLASS:
+						txtTips.text = "请选择要查看哪个班级的分数。";		
+						tUnit.setClasss( tmp as Array);
+						break;
+					case Basic.DATA_TSOCRE:
+						navigator.pushView( TScoreView , tmp);
+						break;
+					case Basic.DATA_STAT:
+						navigator.pushView(TStatView , tmp);
+						break;
+				}
+			}
+			private function goStatView(e:Event=null):void{
+				navigator.pushView(TStatView);
+			}
+			private function goScoreView(e:Event=null):void{
+				navigator.pushView(TScoreView);
+			}
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<s:actionContent>
+	<s:Button id="btnConf"  label="查看" visible="false" doubleClickEnabled="false"/>
+		<s:Button id="btnStat" label="统计" visible="false" doubleClickEnabled="false"/>
+	</s:actionContent>
+	<s:navigationContent>
+		<s:Button id="btnF5" width="44" height="33" icon="assets/f5icon.PNG" visible="false"/>
+	</s:navigationContent>
+	<s:Label id="txtTips" x="0" y="372" width="320" height="28" fontSize="14"  textAlign="center"/>
+	<s:List id="listTest" x="10" y="10" width="130" height="309" selectedIndex="-1" doubleClickEnabled="false"></s:List>
+	<s:List id="listClasss" x="179" y="10" width="130" height="309" selectedIndex="-1" doubleClickEnabled="false"></s:List>
+</s:View>

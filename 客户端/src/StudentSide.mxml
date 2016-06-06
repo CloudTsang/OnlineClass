@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:ViewNavigatorApplication xmlns:fx="http://ns.adobe.com/mxml/2009" 
+							xmlns:s="library://ns.adobe.com/flex/spark" firstView="views.IpInputView" applicationDPI="160"
+							applicationComplete="Init()"
+							>
+	<fx:Script>
+		<![CDATA[
+			import com.onlineclass.net.IConnection;
+			import com.onlineclass.net.IHeartBeat;
+			import com.onlineclass.net.ISender;
+			import com.onlineclass.net.sock.SocketMessage;
+			
+			import views.IpInputView;
+			import views.student.TestListView;
+			
+			private const CLIENT_TYPE:String = "student";
+			/**弹出警告窗口*/public static var alertWindow:Alert = new Alert();
+			/**操作数据传输连接*/public static var con:ISender;
+			/**心跳检测连接*/public static var hbcon:IHeartBeat;
+			protected function Init():void{
+				IpInputView.clientType = CLIENT_TYPE;
+				DataProcessor.Init();
+			}
+			/**清除静态成员*/
+			public static function dispose():void{
+				if(con){
+					con.connectStatus=false;
+					con = null;
+				}
+				if(hbcon){
+					hbcon.stopHB();
+					(hbcon as IConnection).connectStatus = false;
+					hbcon=null;
+				}
+				if(TestListView.sid)TestListView.sid = null;
+				if(TestListView.tUnit)TestListView.tUnit=null;
+				SocketMessage.sid="*";
+			}
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+</s:ViewNavigatorApplication>

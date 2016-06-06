@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" title="网络课程APP - 学生登录页" 
+		viewActivate="activateHandler(event)"
+		viewDeactivate="viewDeactivateHandler(event)">
+	<fx:Script>
+		<![CDATA[
+			import com.onlineclass.net.IConnection;
+			import com.onlineclass.net.ISender;
+			import com.onlineclass.net.mvc.HeartBeatConnection;
+			import com.onlineclass.net.mvc.TestolConnectionHSVC;
+			import com.onlineclass.net.mvc.TestolConnectionMVC;
+			import com.onlineclass.net.sock.HBConnectionSO;
+			import com.onlineclass.net.sock.TestolConnection;
+			import spark.events.ViewNavigatorEvent;
+			
+			protected function activateHandler(e:Event):void{
+				trace("进入登陆视图");
+			}	
+			protected function hbAlert(e:Event):void{
+				StudentSide.alertWindow.setWindow(systemManager.screen.width , systemManager.screen.height,StudentSide.hbcon.errMsg);
+				StudentSide.alertWindow.open(this ,false);
+			}
+			protected function loginHandler(e:Event):void{
+				if(txtLoginInput_Number.text.length<10 || txtLoginInput_Password.text.length<6){
+					txtTips.text="请输入正确的用户学号和密码";
+					return ;
+				}
+				switch(data)
+				{
+					case "Socket":
+						StudentSide.con = new TestolConnection(txtTips);
+						if(StudentSide.hbcon == null)StudentSide.hbcon = new HBConnectionSO();
+						trace("本测试使用socket连接进行");
+						break;
+					case "POST":
+						StudentSide.con = new TestolConnectionMVC(txtTips , "POST");
+						if(StudentSide.hbcon == null)StudentSide.hbcon = new HeartBeatConnection("student");
+						trace("本测试使用POST请求进行");
+						break;
+					case "GET":
+						StudentSide.con = new TestolConnectionHSVC(txtTips , "GET");
+						if(StudentSide.hbcon == null)StudentSide.hbcon = new HeartBeatConnection("student");
+						trace("本测试使用GET请求进行");
+						break;
+				}
+				StudentSide.hbcon.addEventListener(Basic.COMMU_ERROR , hbAlert);
+				StudentSide.con.addEventListener(Basic.COMMUNICATE_COMPLETE , CommuHandler);
+				(StudentSide.con as ISender).login( txtLoginInput_Number.text , txtLoginInput_Password.text );
+				txtTips.text="正在连接到服务器，请稍候...";
+			}
+			protected function CommuHandler(e:Event):void{
+				var type:int = DataProcessor.instance.dataType;
+				switch(type)
+				{
+					case Basic.DATA_ERR:
+						txtTips.text=DataProcessor.instance.data as String;
+						break;
+					case Basic.DATA_LOGINSUCCESS:
+						navigator.pushView( TestListView , DataProcessor.instance.data );
+						break;
+					case Basic.DATA_QUESTIONS:
+						navigator.pushView( QuestionView , {question:DataProcessor.instance.data , student:TestListView.sid});
+						break;
+					case Basic.DATA_GIVEUP:
+						if( (DataProcessor.instance.data as Boolean)==true ) navigator.popView();
+						else txtTips.text="请求中断考试失败";
+						break;
+					case Basic.DATA_SCORE:
+						navigator.replaceView(ScoreView , DataProcessor.instance.data as Number);
+						break;
+				}
+				//				(StudentSide.con as EventDispatcher).removeEventListener(Basic.COMMUNICATE_COMPLETE , CommuHandler);
+			}
+			
+			protected function viewDeactivateHandler(event:Event):void
+			{
+				try{
+					StudentSide.con.removeEventListener(Basic.COMMUNICATE_COMPLETE , CommuHandler);
+				}catch(err:Error){			
+				}
+				finally{
+					trace("退出登陆视图")
+				}
+			}
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<s:actionContent>
+	</s:actionContent>
+	<s:Button id="btnLogin" x="90" y="228" width="146" label="登陆"  doubleClickEnabled="false" click="loginHandler(event)"/>
+	<s:TextInput id="txtLoginInput_Number" x="80" y="50" width="165" height="40" fontSize="20"
+				 prompt="请输入用户学号"  textAlign="center" text="3112008535"/>
+	<s:TextInput id="txtLoginInput_Password" x="80" y="150" width="165" height="40" fontSize="20"
+				 prompt="请输入登录密码"  textAlign="center" text="tsangchiwan"/>
+	<s:Label id="txtTips" x="0" y="374" width="320" height="22" fontSize="20" text="欢迎使用网络课程" textAlign="center"/>
+</s:View>

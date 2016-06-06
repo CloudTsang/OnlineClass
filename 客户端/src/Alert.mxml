@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:SkinnablePopUpContainer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+						   xmlns:s="library://ns.adobe.com/flex/spark"  backgroundAlpha="0.5" > 
+	<fx:Script>
+		<![CDATA[
+			import mx.binding.utils.BindingUtils;
+			import mx.events.FlexEvent;
+			import spark.components.Button;
+			
+			[Bindable]private var _title:String;
+			[Bindable]private var _msg:String;
+			[Bindable]private var _conf:String;
+			[Bindable]private var _padw:int;
+			[Bindable]private var _padh:int;			
+			protected var _btn:Button=new Button();
+			/**
+			 * 设置弹出窗口参数
+			 * @param w，h ： 窗口长宽
+			 * @param m ： 提示信息
+			 * @param b ： 按钮标签
+			 * @param t ： 窗口标题
+			 * **/
+			public function setWindow(w:int , h:int ,m:String , b:String="确定" , t:String="ERROR!"):void{
+				this.width=w;
+				this.height=h;
+				_padw=this.width/2;
+				_padh=this.height/2;
+				_title=t;
+				_msg = m;
+				_conf=b;
+				
+				_btn.x = _padw/4;
+				_btn.y = (0.8*0.75)*_padh;
+				_btn.width = _padw/2;
+				_btn.height = 0.2*_padh;
+				_btn.label = b;
+			}			
+			protected function btn_clickHandler(event:MouseEvent):void
+			{
+				this.dispatchEvent(new Event(Basic.ALERT_CONFIRM));
+			}
+			public function get btn():Button{
+				return _btn;
+			}			
+			protected override function initializationComplete():void 
+			{
+				super.initializationComplete();
+				pad.addElement(_btn);
+			}
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<s:Panel id="pad" title="{_title}" width="{_padw}"  height="{_padh}" horizontalCenter="0" verticalCenter="0">
+		<s:Label id="message" x="0" y="0" width="{_padw}" height="{0.75*_padh}" text="{_msg}" textAlign="center"
+				 verticalAlign="middle"/>
+	</s:Panel>
+</s:SkinnablePopUpContainer>

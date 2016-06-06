@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009"
+		xmlns:s="library://ns.adobe.com/flex/spark"
+		xmlns:charts="mx.charts.*"
+		xmlns:series="mx.charts.series.*"
+		title="分数详情" viewActivate="activateHandler(event)">
+	<fx:Script>
+		<![CDATA[
+			import com.onlineclass.teacherside.SortChar;
+			import mx.collections.ArrayCollection;
+
+			protected static var arrc:ArrayCollection;
+			public static var test:String;
+			public static var classs:String;
+			protected function activateHandler(e:Event):void{
+				if(data!=null)arrc = data as ArrayCollection;
+				listScore.dataProvider = arrc;
+				radiogroupsort.addEventListener(Event.CHANGE , listSort);
+				txtDes.text = test+" "+classs+" 分数";
+			}
+			protected function btnBack_clickHandler(e:Event):void{
+				navigator.popView();
+			}
+			protected function listSort(e:Event):void{
+				switch(radiogroupsort.selection.label ){
+					case "姓名":
+						//					_info.list.sortOn(LABEL_NAME);
+						SortChar.sort( arrc.source , "name");
+						break;
+					case "学号":
+						arrc.source.sortOn("number" , Array.NUMERIC);
+						break;
+					case "分数":
+						arrc.source.sortOn("score" , Array.NUMERIC);
+						break;
+				}
+				arrc.refresh();
+			}
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<s:RadioButtonGroup id="radiogroupsort" />
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<s:actionContent>
+		<s:Button id="btnBack" height="30" label="返回" click="btnBack_clickHandler(event)" doubleClickEnabled="false"/>
+	</s:actionContent>
+	<s:titleContent>
+		<s:Label id="txtDes" width="192" height="22" color="#FDFDFD" fontSize="14" text="试卷名 - 班级"/>
+	</s:titleContent>
+	
+	<s:List id="listScore"  x="10" y="39" width="300" height="361"  doubleClickEnabled="false"
+			itemRenderer="com.onlineclass.teacherside.chartrender.CustomItemRenderer" />
+	
+	<s:RadioButton id="sortName"  x="6" y="0"  label="姓名" groupName="radiogroupsort" fontSize="14"  doubleClickEnabled="false"/>
+	<s:RadioButton id="sortNumber"  x="109" y="0" label="学号" groupName="radiogroupsort" fontSize="14" doubleClickEnabled="false"/>
+	<!-- s:RadioButton id="sortClass"  x="269" y="0" label="班级"  groupName="radiogroupsort"  fontSize="14" doubleClickEnabled="false" /-->
+	<s:RadioButton id="sortScore"  x="237" y="1" label="分数" groupName="radiogroupsort"  fontSize="14" doubleClickEnabled="false"/>
+
+</s:View>

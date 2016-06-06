@@ -1,0 +1,166 @@
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\TestOnlineMVC.dll.config
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\TestOnlineMVC.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\TestOnlineMVC.pdb
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Antlr3.Runtime.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\csredis.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\EntityFramework.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\EntityFramework.SqlServer.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.AspNet.Identity.Core.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.Owin.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.Owin.Security.Cookies.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.Owin.Security.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.Owin.Security.Facebook.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.Owin.Security.Google.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.Owin.Security.OAuth.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.Owin.Security.Twitter.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.Web.Infrastructure.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\MongoDB.Bson.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\MongoDB.Driver.Core.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\MongoDB.Driver.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\MongoDB.Driver.Legacy.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Newtonsoft.Json.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Owin.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\System.Web.Helpers.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\System.Web.Mvc.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\System.Web.Optimization.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\System.Web.Razor.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\System.Web.WebPages.Deployment.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\System.Web.WebPages.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\System.Web.WebPages.Razor.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\WebGrease.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\csredis.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\MongoDB.Bson.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\MongoDB.Driver.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\MongoDB.Driver.Legacy.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\System.Web.Helpers.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\System.Web.Mvc.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\System.Web.Optimization.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\System.Web.Razor.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\System.Web.WebPages.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\System.Web.WebPages.Deployment.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\System.Web.WebPages.Razor.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Antlr3.Runtime.pdb
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Newtonsoft.Json.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\EntityFramework.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\EntityFramework.SqlServer.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.AspNet.Identity.Core.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.Owin.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.Owin.Security.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.Owin.Security.Facebook.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.Owin.Security.Cookies.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.Owin.Security.OAuth.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.Owin.Security.Google.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.Owin.Security.Twitter.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\zh-Hans\System.Web.Helpers.resources.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\zh-Hans\System.Web.Mvc.resources.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\zh-Hans\System.Web.Optimization.resources.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\zh-Hans\System.Web.Razor.resources.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\zh-Hans\System.Web.WebPages.resources.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\zh-Hans\EntityFramework.resources.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\zh-Hans\EntityFramework.SqlServer.resources.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\zh-Hans\Microsoft.AspNet.Identity.Core.resources.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\zh-Hans\Microsoft.AspNet.Identity.Owin.resources.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\zh-Hans\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\zh-Hans\Microsoft.Owin.resources.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\zh-Hans\Microsoft.Owin.Host.SystemWeb.resources.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\zh-Hans\Microsoft.Owin.Security.resources.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\zh-Hans\Microsoft.Owin.Security.Facebook.resources.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\zh-Hans\Microsoft.Owin.Security.Google.resources.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\zh-Hans\Microsoft.Owin.Security.Twitter.resources.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\bin\zh-Hans\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\obj\Debug\TestOnlineMVC.csprojResolveAssemblyReference.cache
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\obj\Debug\TestOnlineMVC.dll
+f:\visual studio 2013\Projects\TestOnlineMVC\TestOnlineMVC\obj\Debug\TestOnlineMVC.pdb
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\TestOnlineMVC.dll.config
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\TestOnlineMVC.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\TestOnlineMVC.pdb
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Antlr3.Runtime.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\csredis.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\EntityFramework.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\EntityFramework.SqlServer.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.AspNet.Identity.Core.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.Owin.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.Owin.Security.Cookies.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.Owin.Security.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.Owin.Security.Facebook.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.Owin.Security.Google.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.Owin.Security.OAuth.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.Owin.Security.Twitter.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.Web.Infrastructure.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\MongoDB.Bson.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\MongoDB.Driver.Core.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\MongoDB.Driver.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\MongoDB.Driver.Legacy.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Newtonsoft.Json.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Owin.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\System.Web.Helpers.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\System.Web.Mvc.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\System.Web.Optimization.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\System.Web.Razor.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\System.Web.WebPages.Deployment.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\System.Web.WebPages.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\System.Web.WebPages.Razor.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\WebGrease.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\csredis.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\MongoDB.Bson.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\MongoDB.Driver.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\MongoDB.Driver.Legacy.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\System.Web.Helpers.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\System.Web.Mvc.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\System.Web.Optimization.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\System.Web.Razor.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\System.Web.WebPages.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\System.Web.WebPages.Deployment.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\System.Web.WebPages.Razor.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Antlr3.Runtime.pdb
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Newtonsoft.Json.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\EntityFramework.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\EntityFramework.SqlServer.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.AspNet.Identity.Core.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.Owin.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.Owin.Security.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.Owin.Security.Facebook.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.Owin.Security.Cookies.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.Owin.Security.OAuth.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.Owin.Security.Google.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.Owin.Security.Twitter.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\zh-Hans\System.Web.Helpers.resources.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\zh-Hans\System.Web.Mvc.resources.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\zh-Hans\System.Web.Optimization.resources.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\zh-Hans\System.Web.Razor.resources.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\zh-Hans\System.Web.WebPages.resources.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\zh-Hans\EntityFramework.resources.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\zh-Hans\EntityFramework.SqlServer.resources.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\zh-Hans\Microsoft.AspNet.Identity.Core.resources.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\zh-Hans\Microsoft.AspNet.Identity.Owin.resources.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\zh-Hans\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\zh-Hans\Microsoft.Owin.resources.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\zh-Hans\Microsoft.Owin.Host.SystemWeb.resources.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\zh-Hans\Microsoft.Owin.Security.resources.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\zh-Hans\Microsoft.Owin.Security.Facebook.resources.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\zh-Hans\Microsoft.Owin.Security.Google.resources.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\zh-Hans\Microsoft.Owin.Security.Twitter.resources.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\bin\zh-Hans\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\obj\Debug\TestOnlineMVC.csprojResolveAssemblyReference.cache
+F:\毕业设计github\服务器端\TestOnlineMVC\obj\Debug\TestOnlineMVC.dll
+F:\毕业设计github\服务器端\TestOnlineMVC\obj\Debug\TestOnlineMVC.pdb

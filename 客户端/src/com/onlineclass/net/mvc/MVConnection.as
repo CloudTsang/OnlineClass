@@ -1,0 +1,96 @@
+package com.onlineclass.net.mvc
+{
+	import com.onlineclass.net.IConnection;
+	import flash.events.Event;
+	import flash.events.EventDispatcher;
+	import flash.events.IOErrorEvent;
+	import flash.events.SecurityErrorEvent;
+	import flash.net.NetConnection;
+	import flash.net.URLLoader;
+	import flash.net.URLLoaderDataFormat;
+	import flash.net.URLRequest;
+	import flash.net.URLRequestMethod;
+	/**使用URLRequest的网络连接*/
+	public class MVConnection extends EventDispatcher implements IConnection
+	{
+		protected  var _request:URLRequest;
+		protected var _loader:URLLoader;
+		protected var _stat:Boolean;
+		protected var _url:String;
+		/**发送数据的类型是get或post ， 默认false为post ， true为get*/
+		protected var _isGET:Boolean;
+		protected var _switch:Boolean;
+		public function MVConnection(type:String="POST")
+		{
+			_url = "http://"+Basic.IP_HTTP+":"+String(Basic.PORT_MVC)+"/";
+			_request = new URLRequest();
+			_loader = new URLLoader();	
+		
+			if(type!="GET" && type!="POST")  throw new Error("Wrong http request type!");
+			else if(type=="GET")	_isGET = true;
+			else  _isGET = false;
+			
+			if(_isGET) _request.method = URLRequestMethod.GET;
+			else _request.method = URLRequestMethod.POST;
+			
+			_loader.dataFormat = URLLoaderDataFormat.TEXT;
+			
+			_loader.addEventListener(Event.COMPLETE , onComplete);
+			_loader.addEventListener(Event.DEACTIVATE , onClosed);
+			_loader.addEventListener(IOErrorEvent.IO_ERROR , IOErrHandler);
+			_loader.addEventListener(SecurityErrorEvent.SECURITY_ERROR , securityErrHandler);
+			_switch=true;
+		}
+		protected function onComplete(e:Event):void{
+			try{
+				trace(e.target.data)
+			}
+			catch(err:Error){
+				trace("数据错误");
+			}
+		}
+		protected function onClosed(e:Event):void{
+			trace("连接已断开。");
+			_stat = false;
+		}
+		protected function securityErrHandler(e:Event):void{
+			trace("security error : "+e);
+		}
+		protected function IOErrHandler(e:IOErrorEvent):void{
+			trace("IO error : "+e.text);
+		}
+		
+		public function set connectStatus(v:Boolean):void
+		{
+			if(v){
+				if(!_stat) _loader.load(_request);
+				else 	return;
+			}
+			else{
+				if(_stat) _loader.close();
+				else	return;
+			}
+//			_stat = !_stat;
+		}
+		
+		public function Send(message:Object):void
+		{
+			if(!_switch)return ;
+			_switch=false;
+			_request.data = message;
+			connectStatus = true;
+		}
+		/***
+		 * 发送HTTP请求
+		 * @param msg ：发送的信息
+		 * @param act,ctrller,area ：控制器相关
+		 * */
+		protected function sendHttpRequest(msg:String , act:String , ctrller:String , area:String=null):void{
+			var tmp:String=_url;
+			if(area) tmp = _url+area;
+			tmp += ctrller+"/"+act;
+			_request.url = tmp;
+			Send(msg);
+		}
+	}
+}

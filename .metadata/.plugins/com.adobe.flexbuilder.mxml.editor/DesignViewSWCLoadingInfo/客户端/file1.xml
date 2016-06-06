@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<ListDetails label="SWC Loading Details" projectName="客户端">
+
+
+<LoadedSetList label="LoadedSet List">
+
+
+<LoadingSet label="LoadingSet1:">
+
+
+<item  label="servicemonitor.swc-1120188535" path="F:\毕业设计\.metadata\.plugins\com.adobe.flexbuilder.codemodel\SwcCache\servicemonitor.swc-1120188535\library.swf"/>
+
+
+<item  label="tlfruntime.swc2124667961" path="F:\毕业设计\.metadata\.plugins\com.adobe.flexbuilder.codemodel\SwcCache\tlfruntime.swc2124667961\library.swf"/>
+
+
+<item  label="mobile.swc-1960574447" path="F:\毕业设计\.metadata\.plugins\com.adobe.flexbuilder.codemodel\SwcCache\mobile.swc-1960574447\library.swf"/>
+
+
+</LoadingSet>
+
+
+<LoadingSet label="LoadingSet2:">
+
+
+<item  label="servicemonitor.swc-1120188535" path="F:\毕业设计\.metadata\.plugins\com.adobe.flexbuilder.codemodel\SwcCache\servicemonitor.swc-1120188535\library.swf"/>
+
+
+<item  label="mobile.swc-1960574447" path="F:\毕业设计\.metadata\.plugins\com.adobe.flexbuilder.codemodel\SwcCache\mobile.swc-1960574447\library.swf"/>
+
+
+</LoadingSet>
+
+
+</LoadedSetList>
+
+
+<RemovedSetList label="RemovedSet List">
+
+
+<RemovedSet label="RemovedSet1:">
+
+
+<item  label="No Item present in this set"/>
+
+
+</RemovedSet>
+
+
+<RemovedSet label="RemovedSet2:">
+
+
+<item  label="tlfruntime.swc2124667961" path="F:\毕业设计\.metadata\.plugins\com.adobe.flexbuilder.codemodel\SwcCache\tlfruntime.swc2124667961\library.swf"/>
+
+
+</RemovedSet>
+
+
+</RemovedSetList>
+
+
+</ListDetails>
+
+

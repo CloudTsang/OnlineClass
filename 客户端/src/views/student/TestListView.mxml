@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" title="试卷选择" 
+		viewActivate="activateHandler(event)"
+		viewDeactivate="viewDeactivateHandler(event)">
+	<fx:Script>
+		<![CDATA[
+			import com.onlineclass.info.StudentInfo;
+			import com.onlineclass.info.TestListInfo;
+			import com.onlineclass.net.IConnection;
+			import com.onlineclass.net.ISender;
+			import com.onlineclass.net.sock.SocketMessage;
+			
+			import spark.events.ViewNavigatorEvent;
+			
+			public static var tUnit:ListUnitTemplate;
+			/**用户信息*/public static var sid:StudentInfo;
+			protected function activateHandler(e:Event):void{
+				trace("进入试卷列表视图");
+				destructionPolicy="never";
+				if(data && !tUnit){
+					var tmp:Array = data as Array;
+					sid = tmp[0] as StudentInfo;
+					tUnit = new TestSelectUnit( tmp[1] as TestListInfo , listTestSelector , txtTestName , txtTestDescription , 
+						btnStartTest ,StudentSide.con);
+					StudentSide.hbcon.startHB(tmp[2]/2);
+					//socket侧的登陆成功信息还会传来客户特征码
+					if( tmp[3]!=undefined){
+						trace("设置用户特征码："+tmp[3]);
+						SocketMessage.sid = tmp[3] as String;
+					}
+				}
+				txtClient_Name.text =sid.name;
+				txtClient_Number.text = sid.number;
+				txtClient_Class.text = sid.classs;
+				
+				StudentSide.con.addEventListener(Basic.COMMUNICATE_COMPLETE , CommuHandler);
+				StudentSide.alertWindow.btn.addEventListener(MouseEvent.CLICK , alertConfirm);
+			}
+			
+			private function alertConfirm(e:Event=null):void{
+				if(StudentSide.alertWindow.isOpen) StudentSide.alertWindow.close();
+				StudentSide.con.removeEventListener(Basic.COMMUNICATE_COMPLETE , CommuHandler);
+				StudentSide.dispose();
+				navigator.popToFirstView();
+			}
+			
+			protected function CommuHandler(e:Event):void{
+				var type:int = DataProcessor.instance.dataType;
+				if(type == Basic.DATA_ERR){
+					txtTips.text=DataProcessor.instance.data as String;
+					return;
+				}
+				navigator.pushView( QuestionView , {question:DataProcessor.instance.data , student:sid});
+				StudentSide.con.removeEventListener(Basic.COMMUNICATE_COMPLETE , CommuHandler);
+			}
+			
+			protected function logOut(e:Event):void{
+				StudentSide.con.logout();
+				StudentSide.con.removeEventListener(Basic.COMMUNICATE_COMPLETE , CommuHandler);
+				StudentSide.dispose();
+				navigator.popView();
+			}
+			protected function viewDeactivateHandler(event:ViewNavigatorEvent):void
+			{
+				StudentSide.alertWindow.btn.removeEventListener(MouseEvent.CLICK , alertConfirm);
+			}
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<s:actionContent>
+		<s:Button id="btn_Logout"   x="-9" width="80" label="注销"  doubleClickEnabled="false" fontSize="18" click="logOut(event)"/>
+	</s:actionContent>
+	<s:Label   x="56" y="10" width="70" height="22" fontSize="20" text="姓名："/>
+	<s:Label   x="56" y="45" width="70" height="22" fontSize="20" text="学号："/>
+	<s:Label   x="56" y="80" width="70" height="22" fontSize="20" text="班级："/>
+	
+	<s:Label id="txtClient_Name"   x="117" y="10" width="200" height="30"  fontSize="20"/>
+	<s:Label id="txtClient_Number"   x="117" y="45" width="200" height="30" fontSize="20"/>
+	<s:Label id="txtClient_Class"   x="117" y="80" width="200" height="30"  fontSize="20"/>
+	
+	<s:List id="listTestSelector"   x="10" y="132" width="116" height="208" fontSize="12"></s:List>
+	<s:Label id="txtTestName"  x="152" y="129" width="147"  height="50" fontSize="14" textAlign="left" verticalAlign="middle" />
+	<s:Label id="txtTestDescription"   x="152" y="187" width="147" height="129"  fontSize="18"/>
+	<s:Button id="btnStartTest"   x="166" y="319" width="110" height="39" label="开始测试" doubleClickEnabled="false"/>
+	
+	<s:Label id="txtTips" x="0" y="374" width="320" height="22" fontSize="20" text="请选择试卷" textAlign="center"/>
+</s:View>

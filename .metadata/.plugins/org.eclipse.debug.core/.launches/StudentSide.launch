@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.adobe.flexbuilder.debug.launchConfigurationType.multiplatform">
+<stringAttribute key="com.adobe.flexbuilder.debug.ATTR_AIR_COMMAND_LINE_ARGUMENTS" value=""/>
+<stringAttribute key="com.adobe.flexbuilder.debug.ATTR_AIR_PUBLISHER_ID" value=""/>
+<stringAttribute key="com.adobe.flexbuilder.debug.ATTR_AIR_SECURITY_POLICY_FILE" value="security-policies/default.xml"/>
+<stringAttribute key="com.adobe.flexbuilder.debug.ATTR_APPLICATION" value="src/StudentSide.mxml"/>
+<booleanAttribute key="com.adobe.flexbuilder.debug.ATTR_CLEAR_APP_DATA" value="false"/>
+<stringAttribute key="com.adobe.flexbuilder.debug.ATTR_MOBILE_DEVICE_NAME" value="HTC Sensation"/>
+<stringAttribute key="com.adobe.flexbuilder.debug.ATTR_MOBILE_LAUNCH_HANDLER" value="com.adobe.flexide.launching.multiplatform.launchhandlers.MultiPlatformADLLaunchHandler"/>
+<stringAttribute key="com.adobe.flexbuilder.debug.ATTR_MOBILE_PLATFORM" value="com.adobe.flexide.multiplatform.android.platform"/>
+<stringAttribute key="com.adobe.flexbuilder.debug.ATTR_PROJECT" value="客户端"/>
+<stringAttribute key="com.adobe.flexbuilder.debug.ATTR_RUN_URL" value="file:/F:/毕业设计/客户端/bin-debug/onlineclass-app.xml"/>
+<booleanAttribute key="com.adobe.flexbuilder.debug.ATTR_USE_DEFAULT_URLS" value="true"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/客户端"/>
+<listEntry value="/客户端/src/StudentSide.mxml"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+<listEntry value="1"/>
+</listAttribute>
+</launchConfiguration>

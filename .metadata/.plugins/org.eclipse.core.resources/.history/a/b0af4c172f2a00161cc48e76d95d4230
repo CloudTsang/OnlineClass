@@ -1,0 +1,9 @@
+package com.onlineclass
+{
+	public class ConnectionCreator
+	{
+		public function ConnectionCreator()
+		{
+		}
+	}
+}

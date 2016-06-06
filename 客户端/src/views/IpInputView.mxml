@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009"
+		xmlns:s="library://ns.adobe.com/flex/spark"
+		xmlns:ns1="*"
+		title="测试用输入IP地址页">
+	<fx:Script>
+		<![CDATA[
+			import views.student.LoginView;
+			import views.teacher.TTestListView;
+			/**客户端是学生侧还是教师侧*/public static var clientType:String;
+			protected function btnIp_clickHandler(e:Event):void{
+				if(txtIp.text.length!=0){
+					Basic.IP_HTTP = txtIp.text;
+					Basic.IP_SO = txtIp.text;
+				}
+				if(clientType == "student"){
+					navigator.replaceView(LoginView , radiogroup1.selection.label);
+					navigator.firstView = LoginView;
+				}else if(clientType == "teacher"){
+					navigator.pushView(TTestListView , radiogroup1.selection.label);
+					navigator.firstView = TTestListView;
+				}
+			}
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<s:RadioButtonGroup id="radiogroup1"/>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+		<ns1:Alert id="alert"/>
+	<s:TextInput id="txtIp" x="10" y="111" textAlign="center"/>
+	<s:Button id="btnIp"  x="132" y="223" label="确认"  click="btnIp_clickHandler(event)"/>
+	
+	<s:RadioButton x="117" y="319" label="POST" groupName="radiogroup1" selected="true" />
+	<s:RadioButton x="227" y="319" label="GET" groupName="radiogroup1" visible="true"/>
+	<s:RadioButton x="10" y="319" label="Socket" groupName="radiogroup1" visible="true" />
+</s:View>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:ItemRenderer 
+	xmlns:s="library://ns.adobe.com/flex/spark"
+	xmlns:mx="library://ns.adobe.com/flex/mx"
+	xmlns:fx="http://ns.adobe.com/mxml/2009"
+	autoDrawBackground="true"
+	creationComplete="Init()"
+	>
+	<fx:Script>
+		<![CDATA[
+			import mx.binding.utils.BindingUtils;
+			private static var _size:Vector.<int>;
+			public static  function setPos(x1:int , x2:int , x3:int , x4:int):void{
+				_size = new <int>[x1 , x2, x3 , x4];
+			}
+			private function Init():void{
+				//主动配置数据绑定
+				BindingUtils.bindProperty( labName , "text" , data , "name" );
+				BindingUtils.bindProperty( labNum , "text" , data , "number" );
+				BindingUtils.bindProperty( labScore , "text" , data , "score" );
+				
+				labName.x = _size[0];
+				labNum.x = _size[1];
+				labScore.x = _size[2];
+			}
+			
+			//			//重写数据属性实现绑定
+			//			[Bindable] private var _name:String;
+			//			[Bindable] private var _number:String;
+			//			[Bindable] private var _score:int;
+			//			[Bindable] private var _data:Object;
+			//			public override function set data(value:Object):void{
+			//				_data = value;
+			//				_name = _data.name;
+			//				_number = _data.number;
+			//				_score = _data.score;
+			//			}
+			//			public override function get data():Object{
+			//				return _data;
+			//			}
+		]]>
+	</fx:Script>
+	<s:Label x="0" width="100"  id="labName"/> 
+	<s:Label x="100" width="100"  id="labNum"/>
+	<s:Label x="300" width="100" id="labScore"/>
+	
+	<!--	<s:Label x="0" width="100" text="{_name}" id="labName"/>
+	<s:Label x="100" width="100" text="{_number}" id="labNum"/>
+	<s:Label x="300" width="100" text="{_score}" id="labScore"/> -->
+</s:ItemRenderer>

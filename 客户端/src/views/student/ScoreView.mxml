@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" title="ScoreView"
+		viewActivate="viewActivateHandler(event)">
+	<fx:Script>
+		<![CDATA[
+			import spark.events.ViewNavigatorEvent;
+			//单独的分数显示View，暂时无用
+			protected function viewActivateHandler(event:ViewNavigatorEvent):void
+			{
+				txtScore.text=String( Number(data) );
+			}
+			protected function backToClient(e:MouseEvent):void{
+				navigator.popView();
+			}
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<s:titleContent>
+		<s:Label  color="#FFFFFF" fontSize="25" text="测试分数"/>
+	</s:titleContent>
+	<s:actionContent>
+		<s:Button id="btnBack" label="返回" click="backToClient(event)"/>
+	</s:actionContent>
+	<s:Label id="txtScore"  x="171" y="213" fontSize="50" textAlign="center"
+			 verticalAlign="middle"/>
+</s:View>

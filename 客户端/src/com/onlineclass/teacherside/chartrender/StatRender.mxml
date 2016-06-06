@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:ItemRenderer xmlns:fx="http://ns.adobe.com/mxml/2009"
+				xmlns:s="library://ns.adobe.com/flex/spark"
+				xmlns:ms="library://ns.adobe.com/flex/mx"
+				width="300" height="20" autoDrawBackground="true" creationComplete="Init()">
+	<fx:Script>
+		<![CDATA[
+			import mx.binding.utils.BindingUtils;
+			private static var _size:Vector.<int>;
+			public static  function setPos(x1:int , x2:int , x3:int):void{
+				_size = new <int>[x1 , x2, x3];
+			}
+			protected function Init():void
+			{
+				BindingUtils.bindProperty( labClass , "text" , data , "classs" );
+				BindingUtils.bindProperty( labAver , "text" , data , "average" );
+				BindingUtils.bindProperty( labVrc , "text" , data , "variance" );
+				
+				labClass.x = _size[0];
+				labAver.x = _size[1];
+				labVrc.x = _size[2];
+			}
+		]]>
+	</fx:Script>
+	<s:Label x="0" width="100" fontSize="14" id="labClass" /> 
+	<s:Label x="100" width="100"  id="labAver"/>
+	<s:Label x="200" width="100"  id="labVrc"/>
+</s:ItemRenderer>
