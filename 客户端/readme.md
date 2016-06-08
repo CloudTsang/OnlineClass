@@ -24,7 +24,7 @@
 
 看成绩只是在服务器批改完试卷后返回来显示一个数字，做得简陋和作答界面是一个view分开State。
 
-![](https://raw.githubusercontent.com/CloudTsang/OnlineTest/master/picture/test1.png)
+![](https://raw.githubusercontent.com/CloudTsang/OnlineClass/master/picture/test1.png)
 
 ###<p id="net">网络连接</p>
 在这一部分多做了一些尝试，开始使用socket连接，之后转成http请求后，泛用的urlRequest和专用（？）的HttpService都各写了一遍，也做成了POST和GET可以在打开应用时选择的形式。
@@ -122,7 +122,7 @@ private function alertConfirm(e:Event=null):void{
 
 实现效果如下：
 
-![](https://raw.githubusercontent.com/CloudTsang/OnlineTest/master/picture/test4.png)
+![](https://raw.githubusercontent.com/CloudTsang/OnlineClass/master/picture/test4.png)
 
 
 ###<p id="question">作答界面</p>
@@ -155,7 +155,7 @@ visualE.addChild(tlf);
 
 ##<p id="teacher">教师侧</p>
 
-![](https://raw.githubusercontent.com/CloudTsang/OnlineTest/master/picture/test2.png)
+![](https://raw.githubusercontent.com/CloudTsang/OnlineClass/master/picture/test2.png)
 
 教师侧的网络连接需要实现这个接口
 ``` as3
