@@ -40,14 +40,15 @@ public interface IConnection
 	}
 ```
 
-在这个应用中，发送的信息只能是以下三种：登陆信息json，试卷请求，试题答案数组学生侧的连接要额外实现这个接口：
+在这个应用中，发送的信息只能是以下五种：登陆信息json，试卷请求，试题答案数组，放弃考试和登出学生侧的连接要额外实现这个接口：
 ``` as3
 function login(no:String , pass:String):void;
 function testRequest( test:String):void;
 function sendAnswer( ans:AnswerInfo ):void;
+function giveup(test:String):void;
 function logout():void;
 ```
-但其实logout是没有做的，手机flex没有ApplicationClosed这样的事件~~真是不方便~~，确认是否在线要做心跳检测，还有是否有重复登录之类的可疑行为的检测都是暂时没有做的。
+手机flex没有ApplicationClosed这样的事件~~真是不方便~~，确认是否在线要做心跳检测，放弃考试和登出两个操作相当于让服务器做一次在线情况检查，因为并没有设计出不允许学生放弃考试/登出的情况，结果都会返回true（允许）。
 
 ####socket
 socket比起未考虑X包问题时增加的编辑header部分，改得不是很多，收发的信息body和http请求是一样的。
